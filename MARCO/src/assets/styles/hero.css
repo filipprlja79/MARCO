@@ -49,6 +49,7 @@
   animation: contentReveal 1.8s ease forwards;
 }
 
+/* dio iznad koda */
 .hero__eyebrow {
   color: #c99f61;
   font-size: 11px;
@@ -59,6 +60,7 @@
   margin-top: -54px;
 }
 
+/* logo */
 .hero__logo {
   width: 260px;
   max-width: 100%;
@@ -67,7 +69,7 @@
   margin: 0 0 20px 0;
   filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.8));
 }
-
+/* naslov ispod loga */
 .hero__title {
   font-size: 42px;
   line-height: 1.05;
@@ -76,7 +78,7 @@
   font-family: Georgia, serif;
   margin-left: 130px;
 }
-
+/* opis */
 .hero__text {
   font-size: 16px;
   line-height: 1.6;
@@ -116,7 +118,7 @@
     transform: translateY(0);
   }
 }
-
+/* MEDIA QUERIES */
 @media (min-width: 768px) {
   .hero {
     align-items: center;
