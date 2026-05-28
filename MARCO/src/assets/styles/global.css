@@ -6,10 +6,13 @@
 
 html{
     scroll-behavior: smooth;
+    min-height: 100%;
+    background-color: #0b0b0b;
 }
 
 body {
-    background-color: var(--color-background);
+    min-height: 100%;
+    background-color: #0b0b0b;
     color: var(--color-text-secondary);
     font-family: Arial, sans-serif;
 }

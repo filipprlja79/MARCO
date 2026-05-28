@@ -8,12 +8,12 @@
       <p class="hero__eyebrow">Traditional Montenegrin Taste</p>
 
       <img
-        src="../assets/images/logo-marco.png"
+        src="../assets/images/LOGO-backgroudoff.png"
         alt="MARCO Delicatess Selection"
         class="hero__logo"
       />
 
-      <h1 class="hero__title">Ukus koji sazrijeva vremenom</h1>
+      <h1 class="hero__title">Tradicionalni specijaliteti</h1>
 
       <p class="hero__text">
         Njeguški specijaliteti proizvedeni tradicionalnim dimljenjem i prirodnim zrenjem.

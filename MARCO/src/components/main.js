@@ -1,8 +1,8 @@
 import {createApp} from 'vue'
 import App from '.App.vue'
-import './assets/variables.css'
-import './assets/global.css'
-import './assets/hero.css'
+import './assets/styles/variables.css'
+import './assets/styles/global.css'
+import './assets/styles/hero.css'
 
 
 createApp(App).mount('#app')
