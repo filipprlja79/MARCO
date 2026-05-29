@@ -1,8 +1,11 @@
 <template>
+  
   <section class="hero">
+    
     <div class="hero__bg"></div>
     <div class="hero__smoke"></div>
     <div class="hero__dark"></div>
+    
 
     <div class="hero__content">
       <p class="hero__eyebrow">Traditional Montenegrin Taste</p>
@@ -16,7 +19,7 @@
       <h1 class="hero__title">Tradicionalni specijaliteti</h1>
 
       <p class="hero__text">
-        Njeguški specijaliteti proizvedeni tradicionalnim dimljenjem i prirodnim zrenjem.
+        Suhomesnati specijaliteti proizvedeni tradicionalnim dimljenjem i prirodnim zrenjem.
       </p>
     </div>
   </section>

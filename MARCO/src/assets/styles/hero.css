@@ -2,28 +2,31 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background: #0b0b0b;
   color: white;
   display: flex;
-  align-items: flex-end;
-  padding: 24px;
+  align-items: center;
+  padding: 80px;
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   background-image: url("../images/susara4.png");
-  background-size: 98%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
+  z-index: 0;
 }
+
 .hero__dark {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(circle at center, rgba(139, 31, 31, 0.25), transparent 45%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #0b0b0b 90%);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), #0b0b0b 92%);
   z-index: 2;
 }
 
@@ -47,52 +50,36 @@
   animation: contentReveal 1.8s ease forwards;
 }
 
-/* dio iznad koda */
 .hero__eyebrow {
   color: #c99f61;
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  margin-left: 130px;
-  margin-top: -54px;
+  margin: 0 0 16px 0;
 }
 
-/* logo */
 .hero__logo {
-  width: 260px;
+  width: 505px;
   max-width: 100%;
-  margin-left: 130px;
   display: block;
-  margin: 0 0 20px 0;
+  margin: 0 0 28px 0;
   filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.8));
 }
-/* naslov ispod loga */
+
 .hero__title {
-  font-size: 42px;
+  font-size: 72px;
   line-height: 1.05;
-  margin-bottom: 18px;
+  margin: 0 0 18px 0;
   color: #c99f61;
   font-family: Georgia, serif;
-  margin-left: 130px;
 }
-/* opis */
+
 .hero__text {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #c99f61;
   max-width: 420px;
-  margin-left: 130px;
-}
-
-@keyframes heroZoom {
-  from {
-    transform: scale(1.0);
-  }
-
-  to {
-    transform: scale(1.0);
-  }
+  margin: 0;
 }
 
 @keyframes smokeMove {
@@ -116,112 +103,81 @@
     transform: translateY(0);
   }
 }
-/* MEDIA QUERIES */
-@media (min-width: 768px) {
-  .hero {
-    align-items: center;
-    padding: 80px;
-  }
-
-  .hero__logo {
-    width: 505px;
-    max-width: 100%;
-    display: block;
-    transform: none;
-    margin: 0 0 28px 0;
-  }
-
-  .hero__title {
-    font-size: 72px;
-  }
-
-  .hero__text {
-    font-size: 18px;
-  }
-}
 
 /* TABLET */
 @media (max-width: 991px) {
-  .hero__eyebrow {
-    margin-left: 60px;
+  .hero {
+    padding: 60px;
   }
 
   .hero__logo {
     width: 380px;
-    margin-left: 60px;
   }
 
   .hero__title {
     font-size: 58px;
-    margin-left: 60px;
   }
 
   .hero__text {
-    margin-left: 60px;
     font-size: 17px;
   }
 }
 
-/* MOBILNI */
+/* MOBILE */
 @media (max-width: 767px) {
   .hero {
     min-height: 100vh;
+    min-height: 100svh;
     padding: 24px;
-    align-items: flex-end;
-  }
-
-  .hero__bg {
-    background-position: center top;
-    transform: scale(1.08);
-  }
-
-  .hero__dark {
-    background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(11, 11, 11, 0.95) 78%),
-      radial-gradient(circle at center, rgba(139, 31, 31, 0.22), transparent 50%);
+    align-items: center;
   }
 
   .hero__content {
     width: 100%;
     max-width: 100%;
-    padding-bottom: 22px;
+    padding-bottom: 0;
+    transform: translateY(-35px);
+  }
+
+  .hero__bg {
+    background-size: cover;
+    background-position: center center;
   }
 
   .hero__eyebrow {
-    margin-left: 0;
     font-size: 10px;
     letter-spacing: 2px;
     margin-bottom: 14px;
   }
 
   .hero__logo {
-    width: 220px;
-    margin-left: 0;
+    width: 230px;
     margin-bottom: 18px;
   }
 
   .hero__title {
-    margin-left: 0;
     font-size: 42px;
     line-height: 1.05;
     margin-bottom: 16px;
   }
 
   .hero__text {
-    margin-left: 0;
     font-size: 16px;
     max-width: 330px;
   }
 }
 
-/* MALI TELEFONI */
 @media (max-width: 480px) {
   .hero {
     padding: 20px;
   }
 
+  .hero__content {
+    transform: translateY(-55px);
+  }
+
   .hero__logo {
-    width: 180px;
+    width: 185px;
   }
 
   .hero__title {
@@ -233,23 +189,5 @@
     max-width: 300px;
   }
 }
+/* KRAJ HERO SEKCIJE */
 
-@media (max-width: 767px) {
-  .hero {
-    align-items: center;
-  }
-
-  .hero__content {
-    transform: translateY(-40px);
-  }
-
-  .hero__bg {
-    background-position: center center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__content {
-    transform: translateY(-70px);
-  }
-}

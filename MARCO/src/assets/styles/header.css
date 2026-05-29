@@ -1,0 +1,174 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: flex-end; /* sve ide desno */
+  align-items: center;
+
+  padding: 30px 60px;
+}
+.header__brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1002;
+}
+
+.header__logo {
+  width: 170px;
+  height: auto;
+  display: block;
+}
+
+.header__brand {
+  color: #c99f61;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  z-index: 1002;
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #c99f61;
+}
+
+.header__toggle {
+  display: none;
+  width: 34px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1002;
+  position: relative;
+}
+
+.header__toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #c99f61;
+  transition: 0.3s ease;
+}
+
+.header__toggle span:nth-child(1) {
+  top: 2px;
+}
+
+.header__toggle span:nth-child(2) {
+  top: 12px;
+}
+
+.header__toggle span:nth-child(3) {
+  top: 22px;
+}
+
+.header__toggle--open span:nth-child(1) {
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.header__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__toggle--open span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+/* TABLET */
+@media (max-width: 991px) {
+  .header {
+    padding: 24px 36px;
+  }
+.header__logo {
+    width: 140px;
+  }
+  .nav {
+    gap: 22px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .header {
+    padding: 22px 24px;
+  }
+  .header__logo {
+    width: 120px;
+  }
+
+  .header__toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 11, 11, 0.96);
+    backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1001;
+  }
+
+  .nav--open {
+    transform: translateX(0);
+  }
+
+  .nav a {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #c99f61;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header__brand {
+    font-size: 16px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
