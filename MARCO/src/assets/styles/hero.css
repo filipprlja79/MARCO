@@ -13,13 +13,11 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/susara4.jpg");
-  background-size: cover;
+  background-image: url("../images/susara4.png");
+  background-size: 98%;
+  background-repeat: no-repeat;
   background-position: center;
-  transform: scale(1.40);
-  animation: heroZoom 12s ease-out forwards;
 }
-
 .hero__dark {
   position: absolute;
   inset: 0;
@@ -89,11 +87,11 @@
 
 @keyframes heroZoom {
   from {
-    transform: scale(1.18);
+    transform: scale(1.0);
   }
 
   to {
-    transform: scale(1.04);
+    transform: scale(1.0);
   }
 }
 
