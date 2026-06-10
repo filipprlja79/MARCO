@@ -61,12 +61,17 @@
   line-height: 1.6;
 }
 
+.marco{
+  color: red;
+}
 .ideas__slider {
   display: flex;
   gap: 22px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 18px;
   scroll-snap-type: x mandatory;
+  max-width: 100%;
 }
 
 .ideas__slider::-webkit-scrollbar {

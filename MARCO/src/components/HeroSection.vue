@@ -1,6 +1,6 @@
 <template>
   
-  <section class="hero">
+  <section id="home" class="home">
     
     <div class="hero__bg"></div>
     <div class="hero__smoke"></div>
@@ -8,7 +8,7 @@
     
 
     <div class="hero__content">
-      <p class="hero__eyebrow">Traditional Montenegrin Taste</p>
+      <p class="hero__eyebrow">Tradicionalni Crnogorski ukusi</p>
 
       <img
         src="../assets/images/LOGO-backgroudoff.png"

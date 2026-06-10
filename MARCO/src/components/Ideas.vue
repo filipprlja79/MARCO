@@ -1,13 +1,12 @@
 <template>
-  <section class="ideas">
+  <section id="recipes" class="ideas">
     <div class="ideas__intro">
         <div class="ideas__cta">
-      <h3>AKO JE MESO KVALITETNO, JELO NE MOŽE BITI LOŠE</h3>
+      <h3>Kada je meso vrhunskog kvaliteta, svaki recept dostiže svoj puni potencijal.</h3>
       <p>
         Preko 500.000 zadovoljnih kupaca već je uživalo u MARCO proizvodima.
         Budi i ti jedan od njih.
       </p>
-      <p>Otkrij naše proizvode</p>
     </div>
       <span class="ideas__eyebrow">MARCO Taste Inspiration</span>
       <h2>Inspiracija za svaki zalogaj</h2>

@@ -13,14 +13,15 @@
 </button>
 
     <nav class="nav" :class="{ 'nav--open': isOpen }">
-      <a href="#home" @click="isOpen = false">Home</a>
-      <a href="#products" @click="isOpen = false">Products</a>
-      <a href="#bestsellers" @click="isOpen = false">Bestsellers</a>
-      <a href="#awards" @click="isOpen = false">Awards</a>
-      <a href="#partners" @click="isOpen = false">Partners</a>
-      <a href="#recipes" @click="isOpen = false">Ideas</a>
+      <a href="#home" @click="isOpen = false">Početna</a>
+      <a href="#products" @click="isOpen = false">Proizvodi</a>
+      <a href="#bestsellers" @click="isOpen = false">Najprodavaniji</a>
+      <a href="#awards" @click="isOpen = false">Nagrade</a>
+      <a href="#partners" @click="isOpen = false">Partneri</a>
+      <a href="#recipes" @click="isOpen = false">Ideje</a>
+      
       <a href="#faq" @click="isOpen = false">FAQ</a>
-      <a href="#contact" @click="isOpen = false">Contact</a>
+      <a href="#contact" @click="isOpen = false">Kontakt</a>
     </nav>
   </header>
 </template>
