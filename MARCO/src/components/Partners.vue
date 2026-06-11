@@ -1,16 +1,15 @@
 <template>
   <section id="partners" class="partners">
     <div class="partners__container">
-      <span class="partners__eyebrow">Istaknuti partneri</span>
+      <span class="partners__eyebrow">{{ t.eyebrow }}</span>
 
-      <h2>Gdje možete pronaći MARCO proizvode</h2>
+      <h2>{{ t.title }}</h2>
 
       <p class="partners__lead">
-        MARCO proizvodi dostupni su širom Crne Gore kroz mrežu naših partnera i
-        prodajnih mjesta.
+        {{ t.description }}
       </p>
 
-      <div class="partners__grid">
+      <div class="partners__grid partners__desktop">
         <article
           v-for="partner in partners"
           :key="partner.name"
@@ -22,44 +21,79 @@
         </article>
       </div>
 
+      <Swiper
+        class="partners__mobile"
+        :slides-per-view="1.15"
+        :space-between="16"
+        :centered-slides="true"
+        :grab-cursor="true"
+      >
+        <SwiperSlide
+          v-for="partner in partners"
+          :key="partner.name"
+        >
+          <article class="partners__item">
+            <img :src="partner.logo" :alt="partner.name" />
+            <h3>{{ partner.name }}</h3>
+            <p>{{ partner.description }}</p>
+          </article>
+        </SwiperSlide>
+      </Swiper>
+
       <p class="partners__bottom">
-        Naši proizvodi svakodnevno stižu do mnogo kupaca kroz pažljivo
-        odabranu mrežu partnera širom Crne Gore. Od velikih trgovinskih lanaca i
-        aerodroma do lokalnih restorana, hotela i kafića. Kvalitet MARCO
-        proizvoda prepoznat je na mjestima gdje se cijene tradicija i ukus.
+        {{ t.bottom }}
       </p>
     </div>
   </section>
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+
 import "../assets/styles/partners.css";
 
-const partners = [
-  {
-    name: "Voli Trade",
-    logo: "../src/assets/images/partneri/Voli.png",
-    description: "Jedan od vodećih maloprodajnih lanaca u Crnoj Gori.",
-  },
-  {
-    name: "Domaća Trgovina",
-    logo: "../src/assets/images/partneri/Domaca-trgovina.png",
-    description: "Aroma, City i Conto marketi.",
-  },
-  {
-    name: "Jugopetrol",
-    logo: "../src/assets/images/partneri/Eko.png",
-    description: "Prodajna mreža kroz EKO/Jugopetrol objekte.",
-  },
-  {
-    name: "Mega Market",
-    logo: "../src/assets/images/partneri/Mega-market.png",
-    description: "Mega marketi Budva.",
-  },
-  {
-    name: "Aerodromi Crne Gore",
-    logo: "../src/assets/images/partneri/Aerodromi-CG.png",
-    description: "Prisustvo na važnim putnim tačkama Crne Gore.",
-  },
-];
+import { currentLanguage } from "../data/languageStore";
+import { translations } from "../data/translations";
+
+import voliLogo from "../assets/images/partneri/Voli.png";
+import domacaLogo from "../assets/images/partneri/Domaca-trgovina.png";
+import jugopetrolLogo from "../assets/images/partneri/Eko.png";
+import megaLogo from "../assets/images/partneri/Mega-market.png";
+import aerodromiLogo from "../assets/images/partneri/Aerodromi-CG.png";
+
+const t = computed(() => {
+  return translations[currentLanguage.value].partners;
+});
+
+const partners = computed(() => {
+  return [
+    {
+      name: t.value.items.voli.name,
+      logo: voliLogo,
+      description: t.value.items.voli.description,
+    },
+    {
+      name: t.value.items.domaca.name,
+      logo: domacaLogo,
+      description: t.value.items.domaca.description,
+    },
+    {
+      name: t.value.items.jugopetrol.name,
+      logo: jugopetrolLogo,
+      description: t.value.items.jugopetrol.description,
+    },
+    {
+      name: t.value.items.mega.name,
+      logo: megaLogo,
+      description: t.value.items.mega.description,
+    },
+    {
+      name: t.value.items.aerodromi.name,
+      logo: aerodromiLogo,
+      description: t.value.items.aerodromi.description,
+    },
+  ];
+});
 </script>

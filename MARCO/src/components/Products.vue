@@ -2,11 +2,12 @@
   <section class="products" id="products">
     <div class="products__container">
       <div class="products__header">
-        <span class="products__eyebrow">MARCO proizvodi</span>
-        <h2>Ukus tradicije u svakom komadu</h2>
-        <p>
-          Pažljivo birani suhomesnati specijaliteti, pripremljeni tradicionalnim
-          postupkom dimljenja, soljenja i prirodnog zrenja.
+        <span class="products__eyebrow">{{ t.eyebrow }}</span>
+
+        <h2>{{ t.title }}</h2>
+
+        <p style="color: #caa46d;">
+          {{ t.description }}
         </p>
       </div>
 
@@ -15,6 +16,7 @@
           v-for="product in products"
           :key="product.name"
           class="product-card"
+          :class="product.className"
         >
           <div class="product-card__image">
             <img :src="product.image" :alt="product.name" />
@@ -31,15 +33,19 @@
       <Swiper
         class="products__mobile"
         :slides-per-view="1.12"
-        :space-between="18"
+        :space-between="16"
         :centered-slides="true"
         :grab-cursor="true"
+        :loop="true"
       >
         <SwiperSlide
           v-for="product in products"
           :key="product.name"
         >
-          <article class="product-card">
+          <article
+            class="product-card"
+            :class="product.className"
+          >
             <div class="product-card__image">
               <img :src="product.image" :alt="product.name" />
             </div>
@@ -57,76 +63,86 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
-import suviVrat from "../assets/images/suvi vrat.jpg";
-import pakovanjePrsute from "../assets/images/pakovanje prsute.jpg";
-import pakovanjePanceta from "../assets/images/pakovanje panceta.jpg";
-import amanetPakovanje from "../assets/images/Amanet pakovanje.jpg";
-import suvaPecenica from "../assets/images/suva pecenica.jpg";
-import njeguskiPrsut from "../assets/images/njeguski prsut.jpg";
-import njeguskaPecenica from "../assets/images/njeguska pecenica.jpg";
+import suviVrat from "../assets/images/suvi-vrat.jpg";
+import pakovanjePrsute from "../assets/images/pakovanje-prsute.jpg";
+import pakovanjePanceta from "../assets/images/pakovanje-panceta.jpg";
+import amanetPakovanje from "../assets/images/amanet-pakovanje.jpg";
+import suvaPecenica from "../assets/images/suva-pecenica.jpg";
+import njeguskiPrsut from "../assets/images/njeguski-prsut.jpg";
+import njeguskaPecenica from "../assets/images/njeguska-pecenica.jpg";
 import slanina from "../assets/images/slanina.jpg";
 
-const products = [
-  {
-    name: "Njeguški suvi vrat",
-    tag: "Selection",
-    image: suviVrat,
-    description:
-      "Pun, dimljen i bogat ukus za one koji traže pravi karakter tradicionalnog suhomesnatog proizvoda.",
-  },
-  {
-    name: "Pakovanje crnogorskog pršuta",
-    tag: "Premium pakovanje",
-    image: pakovanjePrsute,
-    description:
-      "Elegantno rezano pakovanje pršuta, spremno za posluženje, poklon ili premium ugostiteljsku ponudu.",
-  },
-  {
-    name: "Pakovanje pancete",
-    tag: "Premium pakovanje",
-    image: pakovanjePanceta,
-    description:
-      "Sočna panceta u modernom pakovanju, idealna za meze, sendviče, doručak i specijalitete sa punim ukusom.",
-  },
-  {
-    name: "Amanet suvi goveđi pršut",
-    tag: "Amanet linija",
-    image: amanetPakovanje,
-    description:
-      "Posebna linija proizvoda koja spaja nasljeđe, kvalitet i ukus namijenjen pravim ljubiteljima delikatesa.",
-  },
-  {
-    name: "Suva pečenica",
-    tag: "Tradicionalni specijalitet",
-    image: suvaPecenica,
-    description:
-      "Nježna, aromatična i pažljivo dimljena pečenica, odlična za svakodnevno posluženje i posebne prilike.",
-  },
-  {
-    name: "Njeguški pršut",
-    tag: "Klasik",
-    image: njeguskiPrsut,
-    description:
-      "Prepoznatljiv crnogorski specijalitet, sušen i zren po tradicionalnom postupku za autentičan ukus.",
-  },
-  {
-    name: "Njeguška pečenica",
-    tag: "Selection",
-    image: njeguskaPecenica,
-    description:
-      "Kvalitetan komad mesa sa blagim dimljenim notama i teksturom koja se lako uklapa u svako jelo.",
-  },
-  {
-    name: "Slanina",
-    tag: "Domaći ukus",
-    image: slanina,
-    description:
-      "Tradicionalna slanina bogate arome, idealna za domaću trpezu, roštilj, doručak i kuvana jela.",
-  },
-];
+import { currentLanguage } from "../data/languageStore";
+import { translations } from "../data/translations";
+
+const t = computed(() => {
+  return translations[currentLanguage.value].products;
+});
+
+const products = computed(() => {
+  return [
+    {
+      name: t.value.items.njeguskiPrsut.name,
+      tag: t.value.items.njeguskiPrsut.tag,
+      image: njeguskiPrsut,
+      className: "product-card--wide",
+      description: t.value.items.njeguskiPrsut.description,
+    },
+    {
+      name: t.value.items.pakovanjePrsute.name,
+      tag: t.value.items.pakovanjePrsute.tag,
+      image: pakovanjePrsute,
+      className: "product-card--package",
+      description: t.value.items.pakovanjePrsute.description,
+    },
+    {
+      name: t.value.items.pakovanjePanceta.name,
+      tag: t.value.items.pakovanjePanceta.tag,
+      image: pakovanjePanceta,
+      className: "product-card--package",
+      description: t.value.items.pakovanjePanceta.description,
+    },
+    {
+      name: t.value.items.suviVrat.name,
+      tag: t.value.items.suviVrat.tag,
+      image: suviVrat,
+      className: "product-card--tall",
+      description: t.value.items.suviVrat.description,
+    },
+    {
+      name: t.value.items.suvaPecenica.name,
+      tag: t.value.items.suvaPecenica.tag,
+      image: suvaPecenica,
+      className: "product-card--wide",
+      description: t.value.items.suvaPecenica.description,
+    },
+    {
+      name: t.value.items.njeguskaPecenica.name,
+      tag: t.value.items.njeguskaPecenica.tag,
+      image: njeguskaPecenica,
+      className: "product-card--tall",
+      description: t.value.items.njeguskaPecenica.description,
+    },
+    {
+      name: t.value.items.slanina.name,
+      tag: t.value.items.slanina.tag,
+      image: slanina,
+      className: "product-card--wide",
+      description: t.value.items.slanina.description,
+    },
+    {
+      name: t.value.items.amanet.name,
+      tag: t.value.items.amanet.tag,
+      image: amanetPakovanje,
+      className: "product-card--package",
+      description: t.value.items.amanet.description,
+    },
+  ];
+});
 </script>
 
 <style scoped>

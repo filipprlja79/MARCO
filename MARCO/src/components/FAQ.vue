@@ -2,20 +2,21 @@
   <section class="faq" id="faq">
     <div class="faq__container">
       <div class="faq__header">
-        <span class="faq__eyebrow">Često postavljana pitanja</span>
-        <h2>FAQ</h2>
+        <span class="faq__eyebrow">{{ t.eyebrow }}</span>
+
+        <h2>{{ t.title }}</h2>
+
         <p>
-          Odgovori na najčešća pitanja o MARCO proizvodima,
-          proizvodnji i naručivanju.
+          {{ t.description }}
         </p>
       </div>
 
       <div class="faq__list">
         <div
+          v-for="(item, index) in faqs"
+          :key="item.question"
           class="faq__item"
           :class="{ 'faq__item--open': openItems.includes(index) }"
-          v-for="(item, index) in faqs"
-          :key="index"
         >
           <button
             class="faq__question"
@@ -45,9 +46,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import "../assets/styles/FAQ.css";
+
+import { currentLanguage } from "../data/languageStore";
+import { translations } from "../data/translations";
 
 const openItems = ref([]);
+
+const t = computed(() => {
+  return translations[currentLanguage.value].faq;
+});
+
+const faqs = computed(() => {
+  return t.value.items;
+});
 
 const toggle = (index) => {
   if (openItems.value.includes(index)) {
@@ -56,36 +69,4 @@ const toggle = (index) => {
     openItems.value.push(index);
   }
 };
-
-const faqs = [
-  {
-    question: "Odakle dolazi meso koje koristite?",
-    answer:
-      "Za proizvodnju koristimo pažljivo odabrano meso provjerenog porijekla kako bismo osigurali vrhunski kvalitet svakog proizvoda.",
-  },
-  {
-    question: "Kako se proizvodi MARCO pršuta?",
-    answer:
-      "MARCO proizvodi nastaju tradicionalnim dimljenjem i prirodnim procesom zrenja, uz pažljivo kontrolisane uslove proizvodnje.",
-  },
-  {
-    question: "Da li vršite dostavu proizvoda?",
-    answer:
-      "Za informacije o dostavi i dostupnosti proizvoda možete nas kontaktirati putem kontakt forme ili telefona.",
-  },
-  {
-    question: "Gdje mogu kupiti MARCO proizvode?",
-    answer:
-      "Naše proizvode možete pronaći kod odabranih partnera širom Crne Gore, uključujući markete, benzinske stanice i ugostiteljske objekte.",
-  },
-  {
-    question: "Da li proizvodi sadrže alergene?",
-    answer:
-      "Za detaljne informacije o sastavu i alergenima pogledajte deklaraciju proizvoda ili nas kontaktirajte direktno.",
-  },
-];
 </script>
-
-<style scoped>
-@import "../assets/styles/FAQ.css";
-</style>

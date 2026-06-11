@@ -1,34 +1,83 @@
 <template>
   <header class="header">
-    
-
     <button
-  class="header__toggle"
-  :class="{ 'header__toggle--open': isOpen }"
-  @click="isOpen = !isOpen"
->
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+      class="header__toggle"
+      :class="{ 'header__toggle--open': isOpen }"
+      type="button"
+      @click="isOpen = !isOpen"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <nav class="nav" :class="{ 'nav--open': isOpen }">
-      <a href="#home" @click="isOpen = false">Početna</a>
-      <a href="#products" @click="isOpen = false">Proizvodi</a>
-      <a href="#bestsellers" @click="isOpen = false">Najprodavaniji</a>
-      <a href="#awards" @click="isOpen = false">Nagrade</a>
-      <a href="#partners" @click="isOpen = false">Partneri</a>
-      <a href="#recipes" @click="isOpen = false">Ideje</a>
-      
-      <a href="#faq" @click="isOpen = false">FAQ</a>
-      <a href="#contact" @click="isOpen = false">Kontakt</a>
+      <a href="#home" @click="closeMenu">{{ t.home }}</a>
+      <a href="#products" @click="closeMenu">{{ t.products }}</a>
+      <a href="#awards" @click="closeMenu">{{ t.awards }}</a>
+      <a href="#partners" @click="closeMenu">{{ t.partners }}</a>
+      <a href="#recipes" @click="closeMenu">{{ t.ideas }}</a>
+      <a href="#faq" @click="closeMenu">{{ t.faq }}</a>
+      <a href="#contact" @click="closeMenu">{{ t.contact }}</a>
+
+      <div class="language-switcher">
+        <button
+          class="language-switcher__button"
+          type="button"
+          @click="isLangOpen = !isLangOpen"
+        >
+          <img
+            :src="activeLanguage.flag"
+            :alt="activeLanguage.label"
+          />
+        </button>
+
+        <Transition name="language-dropdown">
+          <div
+            v-if="isLangOpen"
+            class="language-switcher__dropdown"
+          >
+            <button type="button" @click="changeLanguage('cg')">
+              <img :src="languages.cg.flag" alt="Crnogorski" />
+              <span>CG</span>
+            </button>
+
+            <button type="button" @click="changeLanguage('en')">
+              <img :src="languages.en.flag" alt="English" />
+              <span>ENG</span>
+            </button>
+          </div>
+        </Transition>
+      </div>
     </nav>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import '../assets/styles/header.css'
+import { ref, computed } from "vue";
+import "../assets/styles/header.css";
 
-const isOpen = ref(false)
+import { languages } from "../data/languages";
+import { currentLanguage, setLanguage } from "../data/languageStore";
+import { translations } from "../data/translations";
+
+const isOpen = ref(false);
+const isLangOpen = ref(false);
+
+const t = computed(() => {
+  return translations[currentLanguage.value].header;
+});
+
+const activeLanguage = computed(() => {
+  return languages[currentLanguage.value];
+});
+
+const closeMenu = () => {
+  isOpen.value = false;
+};
+
+const changeLanguage = (lang) => {
+  setLanguage(lang);
+  isLangOpen.value = false;
+};
 </script>

@@ -3,44 +3,46 @@
     <div class="contact__container">
 
       <div class="contact__info">
-        <span class="contact__subtitle">kONTAKTIRAJTE NAS</span>
+        <span class="contact__subtitle">
+          {{ t.subtitle }}
+        </span>
 
         <h2 class="contact__title">
-          Imate pitanja ili želite da sarađujete sa nama?
+          {{ t.title }}
         </h2>
 
         <p class="contact__description">
-          Zainteresovani ste za naše proizvode ili imate pitanja? Kontaktirajte nas putem obrasca  ili putem naših kontakt informacija. Radujemo se vašem javljanju!
+          {{ t.description }}
         </p>
 
         <p class="contact__description">
-          <strong>Email:</strong> markovujovic@gmail.com
+          <strong>{{ t.emailLabel }}</strong>
+          markovujovic@gmail.com
         </p>
-
       </div>
 
       <form class="contact__form">
         <input
           type="text"
-          placeholder="Your Name"
+          :placeholder="t.namePlaceholder"
           class="contact__input"
         >
 
         <input
           type="email"
-          placeholder="Your Email"
+          :placeholder="t.emailPlaceholder"
           class="contact__input"
         >
 
         <input
           type="tel"
-          placeholder="Phone Number"
+          :placeholder="t.phonePlaceholder"
           class="contact__input"
         >
 
         <textarea
           rows="6"
-          placeholder="Your Message"
+          :placeholder="t.messagePlaceholder"
           class="contact__textarea"
         ></textarea>
 
@@ -48,7 +50,7 @@
           type="submit"
           class="contact__button"
         >
-          Pošalji
+          {{ t.button }}
         </button>
       </form>
 
@@ -57,5 +59,13 @@
 </template>
 
 <script setup>
-import '../assets/styles/contact.css'
+import { computed } from "vue";
+import "../assets/styles/contact.css";
+
+import { currentLanguage } from "../data/languageStore";
+import { translations } from "../data/translations";
+
+const t = computed(() => {
+  return translations[currentLanguage.value].contact;
+});
 </script>
