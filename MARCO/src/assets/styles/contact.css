@@ -22,10 +22,14 @@
   color: white;
   font-size: 56px;
   margin: 16px 0;
+   /* font-family: "Cormorant Garamond", serif;
+   font-weight: 600; */
 }
 
 .contact__description {
   color: rgba(255,255,255,0.7);
+   font-family: "Cormorant Garamond", serif;
+   font-weight: 600;
   line-height: 1.7;
 }
 

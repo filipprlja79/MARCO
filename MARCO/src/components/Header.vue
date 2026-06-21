@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="site-header">
     <button
       class="header__toggle"
       :class="{ 'header__toggle--open': isOpen }"
@@ -14,6 +14,7 @@
     <nav class="nav" :class="{ 'nav--open': isOpen }">
       <a href="#home" @click="closeMenu">{{ t.home }}</a>
       <a href="#products" @click="closeMenu">{{ t.products }}</a>
+      <a href="#maturation" @click="closeMenu">{{ t.maturation }}</a>
       <a href="#awards" @click="closeMenu">{{ t.awards }}</a>
       <a href="#partners" @click="closeMenu">{{ t.partners }}</a>
       <a href="#recipes" @click="closeMenu">{{ t.ideas }}</a>
@@ -64,13 +65,9 @@ import { translations } from "../data/translations";
 const isOpen = ref(false);
 const isLangOpen = ref(false);
 
-const t = computed(() => {
-  return translations[currentLanguage.value].header;
-});
+const t = computed(() => translations[currentLanguage.value].header);
 
-const activeLanguage = computed(() => {
-  return languages[currentLanguage.value];
-});
+const activeLanguage = computed(() => languages[currentLanguage.value]);
 
 const closeMenu = () => {
   isOpen.value = false;
@@ -79,5 +76,6 @@ const closeMenu = () => {
 const changeLanguage = (lang) => {
   setLanguage(lang);
   isLangOpen.value = false;
+  isOpen.value = false;
 };
 </script>

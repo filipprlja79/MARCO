@@ -13,7 +13,7 @@
         {{ t.eyebrow }}
       </span>
 
-      <h2>{{ t.title }}</h2>
+      <h2 class = "header">{{ t.title }}</h2>
 
       <p>
         {{ t.description }}

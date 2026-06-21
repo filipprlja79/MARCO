@@ -4,7 +4,7 @@
       <div class="products__header">
         <span class="products__eyebrow">{{ t.eyebrow }}</span>
 
-        <h2>{{ t.title }}</h2>
+        <h2 class="section-header">{{ t.title }}</h2>
 
         <p style="color: #caa46d;">
           {{ t.description }}
@@ -13,10 +13,14 @@
 
       <div class="products__grid products__desktop">
         <article
-          v-for="product in products"
+          v-for="(product, index) in products"
           :key="product.name"
           class="product-card"
-          :class="product.className"
+          :class="[
+            product.className,
+            { 'product-card--active': activeCard === index }
+          ]"
+          @click="toggleCard(index)"
         >
           <div class="product-card__image">
             <img :src="product.image" :alt="product.name" />
@@ -33,18 +37,22 @@
       <Swiper
         class="products__mobile"
         :slides-per-view="1.12"
-        :space-between="16"
+        :space-between="26"
         :centered-slides="true"
         :grab-cursor="true"
         :loop="true"
       >
         <SwiperSlide
-          v-for="product in products"
+          v-for="(product, index) in products"
           :key="product.name"
         >
           <article
             class="product-card"
-            :class="product.className"
+            :class="[
+              product.className,
+              { 'product-card--active': activeCard === index }
+            ]"
+            @click="toggleCard(index)"
           >
             <div class="product-card__image">
               <img :src="product.image" :alt="product.name" />
@@ -63,7 +71,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
@@ -79,12 +87,25 @@ import slanina from "../assets/images/slanina.jpg";
 import { currentLanguage } from "../data/languageStore";
 import { translations } from "../data/translations";
 
+const activeCard = ref(null);
+
+const toggleCard = (index) => {
+  activeCard.value = activeCard.value === index ? null : index;
+};
+
 const t = computed(() => {
   return translations[currentLanguage.value].products;
 });
 
 const products = computed(() => {
   return [
+    {
+      name: t.value.items.pakovanjePrsute.name,
+      tag: t.value.items.pakovanjePrsute.tag,
+      image: pakovanjePrsute,
+      className: "product-card--package",
+      description: t.value.items.pakovanjePrsute.description,
+    },
     {
       name: t.value.items.njeguskiPrsut.name,
       tag: t.value.items.njeguskiPrsut.tag,
@@ -93,11 +114,11 @@ const products = computed(() => {
       description: t.value.items.njeguskiPrsut.description,
     },
     {
-      name: t.value.items.pakovanjePrsute.name,
-      tag: t.value.items.pakovanjePrsute.tag,
-      image: pakovanjePrsute,
+      name: t.value.items.amanet.name,
+      tag: t.value.items.amanet.tag,
+      image: amanetPakovanje,
       className: "product-card--package",
-      description: t.value.items.pakovanjePrsute.description,
+      description: t.value.items.amanet.description,
     },
     {
       name: t.value.items.pakovanjePanceta.name,
@@ -133,13 +154,6 @@ const products = computed(() => {
       image: slanina,
       className: "product-card--wide",
       description: t.value.items.slanina.description,
-    },
-    {
-      name: t.value.items.amanet.name,
-      tag: t.value.items.amanet.tag,
-      image: amanetPakovanje,
-      className: "product-card--package",
-      description: t.value.items.amanet.description,
     },
   ];
 });

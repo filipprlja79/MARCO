@@ -3,6 +3,7 @@ export const translations = {
     header: {
   home: "Početna",
   products: "Proizvodi",
+  maturation: "Proces",
   awards: "Nagrade",
   partners: "Partneri",
   ideas: "Ideje",
@@ -12,7 +13,7 @@ export const translations = {
     hero: {
       eyebrow: "Tradicionalni crnogorski ukusi",
 
-      title: "Ukus Crne Gore\nkoji se pamti",
+      title: "Ukus\n Crne Gore\nkoji se pamti",
 
       description:
         "Generacijama usavršavan ukus nastao spojem planinskog vazduha,\nprirodnog zrenja i pažljivo odabranog mesa.",
@@ -85,6 +86,27 @@ export const translations = {
         },
       },
     },
+    maturationSection: {
+  eyebrow: "Proces proizvodnje",
+  title: "Tradicija koja sazrijeva vremenom",
+  description:
+    "Svaki MARCO proizvod prolazi kroz pažljivo kontrolisan proces dimljenja, sušenja i prirodnog sazrijevanja, gdje vrijeme, vazduh i iskustvo stvaraju prepoznatljiv ukus.",
+
+  firstTag: "DIMLJENJE",
+  firstTitle: "Prirodno dimljenje",
+  firstText:
+    "Dimljenje je prvi korak koji proizvodima daje karakterističnu aromu. Tradicionalan postupak omogućava da svaki komad mesa postepeno razvije bogat ukus i autentičan miris.",
+
+  secondTag: "SAZRIJEVANJE",
+  secondTitle: "Planinski vazduh Cetinja",
+  secondText:
+    "Nakon dimljenja proizvodi ulaze u fazu prirodnog sazrijevanja. Svjež planinski vazduh i pažljivo kontrolisani uslovi stvaraju punoću ukusa i čvrstu teksturu.",
+
+  thirdTag: "TRADICIJA",
+  thirdTitle: "Vrijeme kao sastojak",
+  thirdText:
+    "Najvažniji dio procesa ne može se ubrzati. Mjeseci sazrijevanja omogućavaju da se razviju boja, aroma i ukus po kojima su MARCO proizvodi prepoznatljivi."
+},
     partners: {
   eyebrow: "Istaknuti partneri",
 
@@ -331,6 +353,7 @@ contact: {
     header: {
   home: "Home",
   products: "Products",
+  maturation: "Process",
   awards: "Awards",
   partners: "Partners",
   ideas: "Ideas",
@@ -413,6 +436,29 @@ contact: {
         },
       },
     },
+    
+    maturationSection: {
+  eyebrow: "Production Process",
+  title: "A Tradition Refined by Time",
+  description:
+    "Every MARCO product goes through a carefully controlled process of smoking, drying and natural maturation, where time, mountain air and experience create a distinctive flavor.",
+
+  firstTag: "SMOKING",
+  firstTitle: "Traditional Smoking",
+  firstText:
+    "Smoking is the first step that gives our products their characteristic aroma. The traditional process allows each cut of meat to gradually develop a rich flavor and authentic scent.",
+
+  secondTag: "MATURATION",
+  secondTitle: "The Mountain Air of Cetinje",
+  secondText:
+    "After smoking, the products enter the natural maturation phase. Fresh mountain air and carefully controlled conditions create depth of flavor and a firm texture.",
+
+  thirdTag: "TRADITION",
+  thirdTitle: "Time as an Ingredient",
+  thirdText:
+    "The most important part of the process cannot be rushed. Months of maturation allow the color, aroma and flavor to fully develop, creating the signature character of MARCO products."
+},
+
     partners: {
   eyebrow: "Featured partners",
 

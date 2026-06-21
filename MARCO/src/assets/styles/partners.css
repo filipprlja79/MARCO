@@ -7,6 +7,8 @@
 .partners__container {
   max-width: 1300px;
   margin: 0 auto;
+   font-family: "Cormorant Garamond", serif;
+   font-weight: 600;
   text-align: center;
 }
 
@@ -24,13 +26,14 @@
   max-width: 900px;
   margin: 0 auto 24px;
   font-size: clamp(40px, 6vw, 82px);
+  color: white;
   line-height: 0.95;
 }
 
 .partners__lead {
   max-width: 720px;
   margin: 0 auto 70px;
-  color: rgba(255, 255, 255, 0.72);
+  color: white;
   font-size: 18px;
   line-height: 1.7;
 }

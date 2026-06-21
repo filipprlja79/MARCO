@@ -3,7 +3,7 @@
     <div class="partners__container">
       <span class="partners__eyebrow">{{ t.eyebrow }}</span>
 
-      <h2>{{ t.title }}</h2>
+      <h2 class = "header">{{ t.title }}</h2>
 
       <p class="partners__lead">
         {{ t.description }}
