@@ -27,6 +27,12 @@
         :space-between="16"
         :centered-slides="true"
         :grab-cursor="true"
+        :loop="true"
+        :autoplay="{
+    delay: 3000,
+    disableOnInteraction: false
+  }"
+        
       >
         <SwiperSlide
           v-for="partner in partners"
@@ -41,8 +47,19 @@
       </Swiper>
 
       <p class="partners__bottom">
-        {{ t.bottom }}
+        {{ t.bottom }}<br> <br>
+        <a
+    class="partners__location"
+    href="https://maps.app.goo.gl/EzSMrhyW2HZVoZ5i9"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+  
+   <span class="partners__pin">📍</span> {{ t.location }}
+    
+  </a>
       </p>
+      
     </div>
   </section>
 </template>
@@ -51,7 +68,7 @@
 import { computed } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-
+import { Autoplay } from "swiper/modules";
 import "../assets/styles/partners.css";
 
 import { currentLanguage } from "../data/languageStore";

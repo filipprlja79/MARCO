@@ -76,9 +76,10 @@
 .hero__eyebrow {
   color: #c99f61;
   font-size: 11px;
+  margin-top: 70px !important;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 16px 65px;
+  margin: 0 20 16px 65px;
 }
 
 .hero__logo {
@@ -166,7 +167,9 @@
   .hero__eyebrow {
     font-size: 10px;
     letter-spacing: 2px;
+    margin-top: 0px !important;
     margin: 0 0 14px 0;
+    
   }
 
   .hero__logo {

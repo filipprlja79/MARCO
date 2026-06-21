@@ -16,7 +16,7 @@ export const translations = {
       title: "Ukus\n Crne Gore\nkoji se pamti",
 
       description:
-        "Generacijama usavršavan ukus nastao spojem planinskog vazduha,\nprirodnog zrenja i pažljivo odabranog mesa.",
+        "Generacijama usavršavan ukus nastao spojem planinskog vazduha,prirodnog zrenja i pažljivo odabranog mesa.",
     },
 
     products: {
@@ -26,7 +26,7 @@ export const translations = {
         "Otkrijte proizvode kojima vjeruje preko 500.000 zadovoljnih kupaca",
 
       description:
-        "Svaki MARCO proizvod nastaje uz poštovanje tradicionalnih receptura i najviših standarda kvaliteta. Od autentičnog Njeguškog pršuta do premium delikates pakovanja — svaki zalogaj donosi ukus koji se ne zaboravlja.",
+        "Svaki MARCO proizvod nastaje uz poštovanje tradicionalnih receptura i najviših standarda kvaliteta. Od autentičnog Njeguškog pršuta do premium delikates pakovanja. Svaki zalogaj donosi ukus koji se ne zaboravlja.",
 
       items: {
         njeguskiPrsut: {
@@ -118,6 +118,7 @@ export const translations = {
   bottom:
     "Naši proizvodi svakodnevno stižu do velikog broja kupaca kroz pažljivo odabranu mrežu partnera širom Crne Gore. Od trgovinskih lanaca i aerodroma do lokalnih restorana, hotela i kafića — kvalitet MARCO proizvoda prepoznat je na mjestima gdje se cijene tradicija i ukus.",
 
+    location: "MARCO proizvode možete naći na lokaciji",
   items: {
     voli: {
       name: "Voli Trade",
@@ -311,7 +312,7 @@ faq: {
     {
       question: "Da li vršite dostavu proizvoda?",
       answer:
-        "Za informacije o dostavi i dostupnosti proizvoda možete nas kontaktirati putem kontakt forme ili telefona.",
+        "Dostava proizvoda se vrsi svakog dana na teritoriji cijele Crne Gore",
     },
     {
       question: "Gdje mogu kupiti MARCO proizvode?",
@@ -470,6 +471,7 @@ contact: {
   bottom:
     "Every day, our products reach customers through a carefully selected network of partners across Montenegro. From retail chains and airports to local restaurants, hotels and cafés — MARCO quality is recognized in places where tradition and taste truly matter.",
 
+    location: "You can find MARCO products at",
   items: {
     voli: {
       name: "Voli Trade",
@@ -674,7 +676,7 @@ faq: {
     {
       question: "Do you offer product delivery?",
       answer:
-        "For delivery information and product availability, you can contact us through the contact form or by phone.",
+        "Product delivery is available every day throughout Montenegro.",
     },
     {
       question: "Where can I buy MARCO products?",

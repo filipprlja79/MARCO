@@ -41,6 +41,10 @@
         :centered-slides="true"
         :grab-cursor="true"
         :loop="true"
+        :autoplay="{
+    delay: 3000,
+    disableOnInteraction: false
+  }"
       >
         <SwiperSlide
           v-for="(product, index) in products"
@@ -83,7 +87,7 @@ import suvaPecenica from "../assets/images/suva-pecenica.jpg";
 import njeguskiPrsut from "../assets/images/njeguski-prsut.jpg";
 import njeguskaPecenica from "../assets/images/njeguska-pecenica.jpg";
 import slanina from "../assets/images/slanina.jpg";
-
+import { Autoplay } from "swiper/modules";
 import { currentLanguage } from "../data/languageStore";
 import { translations } from "../data/translations";
 

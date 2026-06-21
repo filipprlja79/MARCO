@@ -50,6 +50,8 @@
   background: transparent;
   border: none;
   padding: 0;
+  margin-bottom: 5rem;
+  margin: auto 2rem 5rem 2rem;
 }
 
 .partners__item img {
@@ -86,7 +88,42 @@
   font-size: 18px;
   line-height: 1.8;
 }
+.partners__location {
+  position: relative;
+  display: inline-block;
+  margin-top: 12px;
+  color: #c8a46b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
+.partners__location::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.partners__location:hover {
+  color: #85693c;
+}
+
+.partners__location:hover::after {
+  width: 100%;
+}
+.partners__pin {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.partners__location:hover .partners__pin {
+  transform: translateY(-3px);
+}
 @media (max-width: 1100px) {
   .partners__grid {
     grid-template-columns: repeat(3, 1fr);

@@ -80,7 +80,7 @@
 }
 
 .maturation__image::after {
-  content: "aaaaa";
+  
   position: absolute;
   inset: 0;
   background:
