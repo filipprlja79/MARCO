@@ -121,6 +121,7 @@
 .maturation__content h3 {
   margin: 0 0 20px;
   font-size: clamp(30px, 3vw, 48px);
+  font-family: "Cormorant Garamond", serif;
   line-height: 1;
   letter-spacing: -0.035em;
 }

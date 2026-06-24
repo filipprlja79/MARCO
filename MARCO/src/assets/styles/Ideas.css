@@ -24,6 +24,7 @@
 
 .ideas__intro h2 {
   font-size: clamp(40px, 6vw, 88px);
+  font-family: "Cormorant Garamond", serif;
   line-height: 0.95;
   margin: 0 0 24px;
 }
@@ -54,6 +55,7 @@
 
 .ideas__category-head h3 {
   font-size: clamp(30px, 4vw, 56px);
+  font-family: "Cormorant Garamond", serif;
   margin: 8px 0 0;
 }
 
@@ -171,6 +173,7 @@
 
 .ideas__cta h3 {
   font-size: clamp(32px, 5vw, 64px);
+  font-family: "Cormorant Garamond", serif;
   line-height: 1;
   margin: 0 0 22px;
 }
@@ -178,7 +181,7 @@
 .ideas__cta p {
   max-width: 620px;
   margin: 0 auto 32px;
-  color: rgba(255, 255, 255, 0.72);
+  color: white;
   line-height: 1.7;
 }
 

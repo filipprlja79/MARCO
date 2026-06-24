@@ -26,6 +26,7 @@
   max-width: 900px;
   margin: 0 auto 24px;
   font-size: clamp(40px, 6vw, 82px);
+  font-family: "Cormorant Garamond", serif;
   color: white;
   line-height: 0.95;
 }
@@ -33,7 +34,7 @@
 .partners__lead {
   max-width: 720px;
   margin: 0 auto 70px;
-  color: white;
+  color: #b8b8b8;
   font-size: 18px;
   line-height: 1.7;
 }
