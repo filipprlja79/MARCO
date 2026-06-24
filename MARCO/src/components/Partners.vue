@@ -55,7 +55,9 @@
     rel="noopener noreferrer"
   >
   
-   <span class="partners__pin">📍</span> {{ t.location }}
+   <span class="partners__pin"><div class="feature__icon">
+  <MapPin />
+</div></span> {{ t.location }}
     
   </a>
       </p>
@@ -73,7 +75,7 @@ import "../assets/styles/partners.css";
 
 import { currentLanguage } from "../data/languageStore";
 import { translations } from "../data/translations";
-
+import { MapPin } from "lucide-vue-next";
 import voliLogo from "../assets/images/partneri/Voli.png";
 import domacaLogo from "../assets/images/partneri/Domaca-trgovina.png";
 import jugopetrolLogo from "../assets/images/partneri/Eko.png";
