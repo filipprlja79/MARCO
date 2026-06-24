@@ -28,6 +28,23 @@ html{
     font-size: 42px;
     line-height: 1;
   }
+  .header {
+    font-size: 2.5rem;
+  }
+}
+
+.header {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+
+  color: #f7f4ef;
+
+  margin: 0 0 24px;
+  text-align: center;
+
+  letter-spacing: -1px;
 }
 
 body {

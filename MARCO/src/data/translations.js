@@ -86,6 +86,22 @@ export const translations = {
         },
       },
     },
+
+    awards: {
+  eyebrow: "PRIZNANJA",
+  title: "Zlatna medalja kvaliteta",
+  description:
+    "Naša posvećenost vrhunskom kvalitetu potvrđena je zlatnom medaljom Novosadskog sajma 2026. godine.",
+  firstTitle: "Međunarodno priznanje",
+  firstText: "93. Međunarodni poljoprivredni sajam",
+  secondTitle: "Potvrda kvaliteta",
+  secondText: "Nagrada za vrhunski kvalitet proizvoda",
+  thirdTitle: "Ponosno iz Crne Gore",
+  thirdText: "Tradicija i kvalitet sa Cetinja",
+  diplomaAlt: "Diploma",
+  medalAlt: "Zlatna medalja"
+},
+
     maturationSection: {
   eyebrow: "Proces proizvodnje",
   title: "Tradicija koja sazrijeva vremenom",
@@ -437,6 +453,21 @@ contact: {
         },
       },
     },
+
+    awards: {
+  eyebrow: "AWARDS",
+  title: "Gold Medal for Quality",
+  description:
+    "Our dedication to premium quality has been confirmed with the gold medal of the Novi Sad Fair 2026.",
+  firstTitle: "International Recognition",
+  firstText: "93rd International Agricultural Fair",
+  secondTitle: "Quality Confirmation",
+  secondText: "An award for premium product quality",
+  thirdTitle: "Proudly from Montenegro",
+  thirdText: "Tradition and quality from Cetinje",
+  diplomaAlt: "Diploma",
+  medalAlt: "Gold medal"
+},
     
     maturationSection: {
   eyebrow: "Production Process",

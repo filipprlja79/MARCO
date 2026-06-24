@@ -1,0 +1,179 @@
+.awards {
+  background: #0b0a0a;
+  padding: 120px 24px;
+}
+
+.awards__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  /* color: #ffffffd0; */
+}
+
+.awards__eyebrow {
+  display: block;
+  color: #c9a46a;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.awards__description {
+  max-width: 700px;
+  margin: 20px auto 70px;
+  color: #ffffffd0;
+  line-height: 1.8;
+}
+
+.award-card {
+  width: 450px;
+  max-width: 560px;
+  margin: 0 auto 80px;
+}
+
+.award-card__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #100f0f;
+  border: 1px solid rgba(201, 164, 106, 0.22);
+}
+
+.award-card__diploma {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.award-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.award-card__overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.award-card__medal {
+  width: 70%;
+  max-width: 390px;
+  transform: scale(0.9);
+  transition: transform 0.45s ease;
+  z-index: 2;
+}
+
+.award-card:hover .award-card__overlay {
+  opacity: 1;
+}
+
+.award-card:hover .award-card__overlay::before {
+  left: 140%;
+}
+
+.award-card:hover .award-card__medal {
+  transform: scale(1);
+}
+
+.award-card:hover .award-card__diploma {
+  transform: scale(1.03);
+}
+
+.awards__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.feature__icon {
+  color: #c9a46a;
+  flex-shrink: 0;
+}
+
+.feature__icon svg {
+  width: 34px;
+  height: 34px;
+  stroke-width: 1.8;
+}
+
+.feature h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+  .awards {
+    padding: 100px 22px;
+  }
+
+  .award-card {
+    max-width: 520px;
+  }
+
+  .awards__features {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .awards {
+    padding: 0px 10px;
+  }
+
+  .awards__description {
+    margin-bottom: 50px;
+  }
+
+  .award-card {
+    max-width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .award-card__image {
+    border-radius: 20px;
+  }
+
+  .award-card__medal {
+    width: 78%;
+  }
+
+  .feature {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
