@@ -19,13 +19,29 @@
 }
 /* mobile slika */
 @media (max-width: 768px) {
-  .hero__bg {
-    background-image: url("../images/susara4-mobile.png");
-    background-position: center center;
-    background-size: cover;
+  .hero__dark {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.35) 28%,
+        rgba(0, 0, 0, 0.88) 52%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+    z-index: 2;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+  }
+
+  .hero h1,
+  .hero p,
+  .hero__eyebrow {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.85);
   }
 }
-
 .hero__smoke {
   position: absolute;
   inset: -20%;
