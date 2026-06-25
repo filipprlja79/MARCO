@@ -21,30 +21,35 @@
         </article>
       </div>
 
-      <Swiper
-        class="partners__mobile"
-        :slides-per-view="1.15"
-        :space-between="16"
-        :centered-slides="true"
-        :grab-cursor="true"
-        :loop="true"
-        :autoplay="{
-    delay: 3000,
+     <Swiper
+  class="partners__mobile partners__fade"
+  :modules="[Autoplay, EffectFade]"
+  effect="fade"
+  :fade-effect="{ crossFade: true }"
+  :slides-per-view="1"
+  :loop="true"
+  :speed="1000"
+  :long-swipes="false"
+:short-swipes="true"
+:follow-finger="false"
+:threshold="40"
+  :allow-touch-move="true"
+  :autoplay="{
+    delay: 3500,
     disableOnInteraction: false
   }"
-        
-      >
-        <SwiperSlide
-          v-for="partner in partners"
-          :key="partner.name"
-        >
-          <article class="partners__item">
-            <img :src="partner.logo" :alt="partner.name" />
-            <h3>{{ partner.name }}</h3>
-            <p>{{ partner.description }}</p>
-          </article>
-        </SwiperSlide>
-      </Swiper>
+>
+  <SwiperSlide
+    v-for="partner in partners"
+    :key="partner.name"
+  >
+    <article class="partners__item">
+      <img :src="partner.logo" :alt="partner.name" />
+      <h3>{{ partner.name }}</h3>
+      <p>{{ partner.description }}</p>
+    </article>
+  </SwiperSlide>
+</Swiper>
 
       <p class="partners__bottom">
         {{ t.bottom }}<br> <br>
@@ -70,9 +75,10 @@
 import { computed } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
 import "../assets/styles/partners.css";
-
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
 import { currentLanguage } from "../data/languageStore";
 import { translations } from "../data/translations";
 import { MapPin } from "lucide-vue-next";

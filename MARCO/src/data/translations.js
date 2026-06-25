@@ -134,7 +134,7 @@ export const translations = {
   bottom:
     "Naši proizvodi svakodnevno stižu do velikog broja kupaca kroz pažljivo odabranu mrežu partnera širom Crne Gore. Od trgovinskih lanaca i aerodroma do lokalnih restorana, hotela i kafića — kvalitet MARCO proizvoda prepoznat je na mjestima gdje se cijene tradicija i ukus.",
 
-    location: "MARCO proizvode možete naći na lokaciji",
+    location: "MARCO proizvode možete naći i na lokaciji",
   items: {
     voli: {
       name: "Voli Trade",
@@ -363,6 +363,41 @@ contact: {
 
   button: "Pošalji",
 },
+
+footer: {
+  eyebrow: "MARCO Delicatess Selection",
+
+  title: "MARCO",
+
+  description:
+    "Tradicionalni ukusi Crne Gore, pažljivo pripremljeni za savremene stolove.",
+
+  navigation: "Navigacija",
+
+  products: "Proizvodi",
+
+  contact: "Kontakt",
+
+  links: {
+    products: "Proizvodi",
+    production: "Proizvodnja",
+    inspiration: "Inspiracija",
+    partners: "Partneri",
+  },
+
+  productLinks: {
+    prosciutto: "Njeguški pršut",
+    pancetta: "Panceta",
+    dryNeck: "Suvi vrat",
+    smokedLoin: "Pečenica",
+  },
+
+  location: "Cetinje, Crna Gora",
+
+  delivery: "Dostava svakog dana širom Crne Gore",
+
+  rights: "© 2026 MARCO Delicatess Selection. Sva prava zadržana.",
+},
   },
 
   en: {
@@ -502,7 +537,7 @@ contact: {
   bottom:
     "Every day, our products reach customers through a carefully selected network of partners across Montenegro. From retail chains and airports to local restaurants, hotels and cafés — MARCO quality is recognized in places where tradition and taste truly matter.",
 
-    location: "You can find MARCO products at",
+    location: "Also you can find MARCO products at",
   items: {
     voli: {
       name: "Voli Trade",
@@ -742,7 +777,42 @@ contact: {
 
   button: "Send",
 },
+footer: {
+  eyebrow: "MARCO Delicatess Selection",
+
+  title: "MARCO",
+
+  description:
+    "Traditional flavours of Montenegro, carefully crafted for modern tables.",
+
+  navigation: "Navigation",
+
+  products: "Products",
+
+  contact: "Contact",
+
+  links: {
+    products: "Products",
+    production: "Production",
+    inspiration: "Inspiration",
+    partners: "Partners",
   },
+
+  productLinks: {
+    prosciutto: "Njeguški Prosciutto",
+    pancetta: "Pancetta",
+    dryNeck: "Dry Pork Neck",
+    smokedLoin: "Smoked Loin",
+  },
+
+  location: "Cetinje, Montenegro",
+
+  delivery: "Delivery every day across  Montenegro",
+
+  rights: "© 2026 MARCO Delicatess Selection. All rights reserved.",
+},
+  },
+  
   
 };
 

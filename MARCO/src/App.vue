@@ -8,6 +8,7 @@ import Partners from './components/Partners.vue'
 import IdeasSection from './components/Ideas.vue'
 import Awards from './components/Awards.vue';
 import FAQ from "./components/FAQ.vue";
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -20,4 +21,5 @@ import FAQ from "./components/FAQ.vue";
   <IdeasSection />
   <FAQ />
   <Contact />
+  <Footer/>
 </template>

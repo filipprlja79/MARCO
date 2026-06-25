@@ -17,6 +17,14 @@
   background-size: cover;
   z-index: 0;
 }
+/* mobile slika */
+@media (max-width: 768px) {
+  .hero__bg {
+    background-image: url("../images/susara4-mobile.png");
+    background-position: center center;
+    background-size: cover;
+  }
+}
 
 .hero__smoke {
   position: absolute;

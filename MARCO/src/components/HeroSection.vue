@@ -4,7 +4,7 @@
     
     <div class="hero__bg"></div>
     <div class="hero__smoke"></div>
-    <div class="hero__dark"></div>
+    <!-- <div class="hero__dark"></div> -->
     
 
    <div class="hero__content"> <p class="hero__eyebrow"> {{ t.eyebrow }} </p>
