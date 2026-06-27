@@ -14,8 +14,8 @@
     <nav class="nav" :class="{ 'nav--open': isOpen }">
       <a href="#home" @click="closeMenu">{{ t.home }}</a>
       <a href="#products" @click="closeMenu">{{ t.products }}</a>
-      <a href="#maturation" @click="closeMenu">{{ t.maturation }}</a>
       <a href="#nagrade" @click="closeMenu">{{ t.awards }}</a>
+      <a href="#maturation" @click="closeMenu">{{ t.maturation }}</a>    
       <a href="#partners" @click="closeMenu">{{ t.partners }}</a>
       <a href="#recipes" @click="closeMenu">{{ t.ideas }}</a>
       <a href="#faq" @click="closeMenu">{{ t.faq }}</a>

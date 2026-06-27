@@ -15,8 +15,8 @@ import Footer from './components/Footer.vue';
   <Header />
   <HeroSection />
   <Products />
-  <MaturationProcess />
   <Awards />
+  <MaturationProcess />
   <Partners />
   <IdeasSection />
   <FAQ />
