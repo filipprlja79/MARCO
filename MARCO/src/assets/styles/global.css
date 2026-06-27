@@ -1,7 +1,10 @@
+@import "./variables.css";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html{
@@ -10,11 +13,48 @@ html{
     background-color: #0b0b0b;
 }
 
+.section-header {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .section-header {
+    font-size: 42px;
+    line-height: 1;
+  }
+  .header {
+    font-size: 2.5rem;
+  }
+}
+
+.header {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+
+  color: #f7f4ef;
+
+  margin: 0 0 24px;
+  text-align: center;
+
+  letter-spacing: -1px;
+}
+
 body {
     min-height: 100%;
     background-color: #0b0b0b;
     color: var(--color-text-secondary);
     font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 100%;
+  overflow-x: hidden;
 }
 
 img{

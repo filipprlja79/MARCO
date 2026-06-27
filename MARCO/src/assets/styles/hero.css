@@ -2,31 +2,28 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background: #0b0b0b;
   color: white;
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../images/susara4.jpg");
+  background-image: url("../images/susara4.png");
+  background-repeat: no-repeat;
+  background-position: center 40%;
   background-size: cover;
-  background-position: center;
-  transform: scale(1.40);
-  animation: heroZoom 12s ease-out forwards;
+  z-index: 0;
 }
-
-.hero__dark {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at center, rgba(139, 31, 31, 0.25), transparent 45%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #0b0b0b 90%);
-  z-index: 2;
+/* mobile slika */
+@media (max-width: 768px) {
+  .hero__bg {
+    background-image: url("../images/susara4-mobile.png");
+    background-position: center center;
+    background-size: cover;
+  }
 }
 
 .hero__smoke {
@@ -41,58 +38,86 @@
   z-index: 1;
 }
 
+.hero__dark {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(139, 31, 31, 0.25), transparent 45%),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.8) 75%,
+      #0b0b0b 100%
+    );
+  z-index: 2;
+}
+
+.hero__dark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 260px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 11, 11, 0) 0%,
+    rgba(11, 11, 11, 0.8) 55%,
+    #0b0b0b 100%
+  );
+}
+
 .hero__content {
-  position: relative;
-  z-index: 3;
-  width: min(560px, 100%);
-  max-width: 560px;
-  animation: contentReveal 1.8s ease forwards;
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  z-index: 5;
+  width: 560px;
+   font-family: "Cormorant Garamond", serif;
+   font-weight: 600;
+  max-width: calc(100% - 160px);
+  transform: translateY(-50%);
 }
 
 .hero__eyebrow {
   color: #c99f61;
   font-size: 11px;
+  margin-top: 70px !important;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  margin-left: 130px;
-  margin-top: -54px;
+  margin: 0 20 16px 65px;
 }
 
 .hero__logo {
-  width: 260px;
+  width: 505px;
   max-width: 100%;
-  margin-left: 130px;
   display: block;
-  margin: 0 0 20px 0;
+  margin: 0 0 28px 0;
   filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.8));
 }
 
 .hero__title {
-  font-size: 42px;
+  font-size: 72px;
   line-height: 1.05;
-  margin-bottom: 18px;
-  color: #c99f61;
-  font-family: Georgia, serif;
-  margin-left: 130px;
+  margin: 0 0 18px 65px;
+  color: white;
+  white-space: pre-line;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  min-height: 230px;
 }
 
 .hero__text {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #c99f61;
-  max-width: 420px;
-  margin-left: 130px;
-}
+  max-width: 470px;
+  margin: 0 0 0 65px;
+  white-space: pre-line;
 
-@keyframes heroZoom {
-  from {
-    transform: scale(1.18);
-  }
-
-  to {
-    transform: scale(1.04);
-  }
+  min-height: 90px;
 }
 
 @keyframes smokeMove {
@@ -105,151 +130,100 @@
   }
 }
 
-@keyframes contentReveal {
-  from {
-    opacity: 0;
-    transform: translateY(36px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (min-width: 768px) {
-  .hero {
-    align-items: center;
-    padding: 80px;
-  }
-
-  .hero__logo {
-    width: 505px;
-    max-width: 100%;
-    display: block;
-    transform: none;
-    margin: 0 0 28px 0;
-  }
-
-  .hero__title {
-    font-size: 72px;
-  }
-
-  .hero__text {
-    font-size: 18px;
-  }
-}
-
 /* TABLET */
+
 @media (max-width: 991px) {
-  .hero__eyebrow {
-    margin-left: 60px;
+  .hero__content {
+    left: 60px;
+    width: 480px;
+    max-width: calc(100% - 120px);
   }
 
   .hero__logo {
     width: 380px;
-    margin-left: 60px;
   }
 
   .hero__title {
     font-size: 58px;
-    margin-left: 60px;
+     font-family: "Cormorant Garamond", serif;
+     font-weight: 600;
+    min-height: 180px;
   }
 
   .hero__text {
-    margin-left: 60px;
     font-size: 17px;
+    max-width: 430px;
+    min-height: 90px;
   }
 }
 
-/* MOBILNI */
+/* MOBILE */
+
 @media (max-width: 767px) {
-  .hero {
-    min-height: 100vh;
-    padding: 24px;
-    align-items: flex-end;
-  }
-
   .hero__bg {
-    background-position: center top;
-    transform: scale(1.08);
-  }
-
-  .hero__dark {
-    background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(11, 11, 11, 0.95) 78%),
-      radial-gradient(circle at center, rgba(139, 31, 31, 0.22), transparent 50%);
+    background-position: center center;
   }
 
   .hero__content {
-    width: 100%;
-    max-width: 100%;
-    padding-bottom: 22px;
+    left: 24px;
+    top: 47%;
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
+    transform: translateY(-50%);
   }
 
   .hero__eyebrow {
-    margin-left: 0;
     font-size: 10px;
     letter-spacing: 2px;
-    margin-bottom: 14px;
+    margin-top: 0px !important;
+    margin: 0 0 14px 0;
+    
   }
 
   .hero__logo {
-    width: 220px;
-    margin-left: 0;
+    width: 230px;
     margin-bottom: 18px;
   }
 
   .hero__title {
-    margin-left: 0;
     font-size: 42px;
     line-height: 1.05;
-    margin-bottom: 16px;
+    margin: 0 0 16px 0;
+     font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    min-height: 140px;
   }
 
   .hero__text {
-    margin-left: 0;
     font-size: 16px;
     max-width: 330px;
+    margin: 0;
+    min-height: 100px;
   }
 }
 
-/* MALI TELEFONI */
 @media (max-width: 480px) {
-  .hero {
-    padding: 20px;
+  .hero__content {
+    left: 20px;
+    top: 44%;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
   }
 
   .hero__logo {
-    width: 180px;
+    width: 185px;
   }
 
   .hero__title {
     font-size: 34px;
+    min-height: 115px;
+     font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
   }
 
   .hero__text {
     font-size: 14px;
     max-width: 300px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero {
-    align-items: center;
-  }
-
-  .hero__content {
-    transform: translateY(-40px);
-  }
-
-  .hero__bg {
-    background-position: center center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__content {
-    transform: translateY(-70px);
+    min-height: 90px;
   }
 }
